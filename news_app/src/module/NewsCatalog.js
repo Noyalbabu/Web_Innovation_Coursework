@@ -4,13 +4,12 @@ import axios from "axios";
 
 //Declaring const for the news catalog
 const NewsCatalog = () => {
-    const [newsArticle, setnewsArticle] = useState([]);
-
+    const [articles, setnewsArticle] = useState([]);
     useEffect(() => {
         const fetchnewsArticle = async () => {
             try{
             console.log("Fetching news data");
-            const response = await axios.get("https://newsapi.org/v2/everything?q=Apple&from=2023-12-24&sortBy=politics&apiKey=43d13539acbd4ba4814f3e166a9130d7");
+            const response = await axios.get('https://newsapi.org/v2/everything?q=Nature&from=2023-12-24&sortBy=politics&apiKey=43d13539acbd4ba4814f3e166a9130d7');
             setnewsArticle(response.data.articles);
             //print the data 
             console.log(response);
@@ -22,18 +21,18 @@ const NewsCatalog = () => {
  }, [] );
 
     return (
-        <div>
-            <h1 className="main">NEWS</h1>
-            <h4 className="main">New every where world source</h4>
+        <div className="display">
             <section>
-                {newsArticle.map(article =>{
+                {articles.map(article =>{
                     return (
                         <NewsElement
-                            key ={article.title}
+                            key ={article.source.id}
                             title ={article.title}
-                            description ={article.description}
+                            content ={article.content}
                             url ={article.url}
-                            urlToImage ={article.urlToImage} />
+                            urlToImage ={article.urlToImage} 
+                            source ={article.source.name}
+                            date= {article.publishedAt}   />
                     )
                 } )}
             </section>

@@ -1,9 +1,14 @@
+#main{
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 5px;
+}
+
 .newsWebsite {
     justify-content: center;
     display: flex;
 }
-
-
 
 .newsElement {
     padding :20px;
@@ -24,4 +29,10 @@
 .newsArticle{
     font-size: 15px;
     font-weight: normal;
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
 }
