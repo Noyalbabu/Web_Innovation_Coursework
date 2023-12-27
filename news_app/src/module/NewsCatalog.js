@@ -8,30 +8,37 @@ const NewsCatalog = () => {
 
     useEffect(() => {
         const fetchnewsArticle = async () => {
-            const response = await axios.get("https://newsapi.org/v2/everything?q=Apple&from=2023-12-24&sortBy=popularity&apiKey=43d13539acbd4ba4814f3e166a9130d7");
+            try{
+            console.log("Fetching news data");
+            const response = await axios.get("https://newsapi.org/v2/everything?q=Apple&from=2023-12-24&sortBy=politics&apiKey=43d13539acbd4ba4814f3e166a9130d7");
             setnewsArticle(response.data.articles);
             //print the data 
             console.log(response);
-        }
-        getnewsArticle();
+            } catch (error) {
+                console.error("Error fetching news:", error);
+            }
+    };
+        fetchnewsArticle();
  }, [] );
 
     return (
         <div>
-            <h1 className="heading">NEWS</h1>
-            <h4 className="heading">I love u</h4>
+            <h1 className="main">NEWS</h1>
+            <h4 className="main">New every where world source</h4>
             <section>
                 {newsArticle.map(article =>{
                     return (
                         <NewsElement
+                            key ={article.title}
                             title ={article.title}
                             description ={article.description}
                             url ={article.url}
                             urlToImage ={article.urlToImage} />
-                        
                     )
                 } )}
             </section>
         </div>
     );
 };
+
+export default NewsCatalog;

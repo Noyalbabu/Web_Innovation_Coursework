@@ -2,7 +2,7 @@ import './NewsElement.css';
 import React from 'react';
 
 // We are creating a component called NewsElement to display the title, descriptuion, url, image from news API
-const NewsElement = (props) => ({title, description, url, urlToImage}) => {
+const NewsElement = ({title, description, url, urlToImage}) => {
     return (
         <div className="newsWebsite">
             <div className="newsElement">
