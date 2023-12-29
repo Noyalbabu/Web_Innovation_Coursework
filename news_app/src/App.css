@@ -1,3 +1,6 @@
+*{
+  background-color: rgba(155, 224, 159, 0.829);
+}
 .App {
   text-align: center;
 }
@@ -14,7 +17,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -41,7 +43,7 @@
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  color: rgb(16, 0, 0);
+  color: rgb(245, 246, 241);
 }
 
 .header h1{
@@ -57,23 +59,22 @@
   color: rgb(71, 69, 69);
 }
 
-.tool_bar button{
+.tool_bar button, input{
   /*display all the buttons underthis div in center*/
   justify-content: center;
   align-items: center;
   margin: 0 10px;
   width: 280px;
   height: 30px;
-  background-color: rgb(150, 85, 85);
+  background-color: rgb(234, 243, 236);
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
-  color: rgb(250, 245, 245);
+  color: rgb(43, 2, 2);
   text-align: center;
   vertical-align: middle;
   line-height: 30px;
   display: inline-block;
   cursor: pointer;
   border: none;
-
 }
