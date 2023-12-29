@@ -1,5 +1,5 @@
 *{
-  background-color: rgba(155, 224, 159, 0.829);
+  background-color: rgba(61, 105, 88, 0.863);
 }
 .App {
   text-align: center;
@@ -54,9 +54,11 @@
 
 .header h2{
   font-size: 20px;
+  font-style: italic;
+  font-weight: bolder;
   text-align: center;
   letter-spacing: 5px;
-  color: rgb(71, 69, 69);
+  color: rgb(204, 209, 193);
 }
 
 .tool_bar button, input{
@@ -66,7 +68,7 @@
   margin: 0 10px;
   width: 280px;
   height: 30px;
-  background-color: rgb(234, 243, 236);
+  background-color: rgba(231, 225, 197, 0.993);
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;

@@ -1,14 +1,27 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import NewsCatalog from './module/NewsCatalog';
 import './App.css';
+
+//Function to design app
+function PopUpButton({onClick, children}) {
+    const [hover, setHover] = useState(false);
+    let restColor = ' rgba(231, 225, 197, 0.993)';
+    let hoverColor = 'rgb(255, 255, 255)';
+    return (
+        <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
+                onMouseOver={() => 
+                    setHover(true)
+                }
+                onMouseLeave={() => 
+                    setHover(false)
+                }
+                onClick={onClick}>{children}</button>
+    );
+}
 
 function App() {
     const [showNews, setShowNews] = useState(false);
     const [topic, setTopic] = useState();
-    const [hover, setHover] = useState(false);
-
-    let restColor = 'rgb(234, 243, 236)';
-    let hoverColor = 'rgb(255, 255, 255)';
 
     const handleClick = () => {
         setShowNews(!showNews);
@@ -19,7 +32,6 @@ function App() {
         setTopic(topic);
         console.log(topic);
     };
-    useEffect(() => {},[hover]);
         return (
             <div className="news_app">
                 <div className='header'>
@@ -27,47 +39,10 @@ function App() {
                     <h2 >Newer Efficient Way of Source</h2>
                 </div>
                 <div className='tool_bar'>
-                    <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
-                            onMouseOver={(event) => {
-                                event.preventDefault();
-                                setHover(true);
-                            }}
-                            onMouseLeave={(event) => {
-                                event.preventDefault();
-                                setHover(false);
-                            }}
-                            onClick={handleClick}>Explore</button>
-                            
-                    <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
-                            onMouseOver={(event) => {
-                                event.preventDefault();
-                                setHover(true);
-                            }}
-                            onMouseLeave={(event) => {
-                                event.preventDefault();
-                                setHover(false);
-                            }}>Navigation</button>
-                            
-                    <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
-                            onMouseOver={(event) => {
-                                event.preventDefault();
-                                setHover(true);
-                            }}
-                            onMouseLeave={(event) => {
-                                event.preventDefault();
-                                setHover(false);
-                            }}>Language</button>
-                            
-                    <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
-                            onMouseOver={(event) => {
-                                event.preventDefault();
-                                setHover(true);
-                            }}
-                            onMouseLeave={(event) => {
-                                event.preventDefault();
-                                setHover(false);
-                            }}>Profile</button>
-
+                    <PopUpButton onClick={handleClick}>Explore</PopUpButton>
+                    <PopUpButton>Navigation</PopUpButton>
+                    <PopUpButton>Language</PopUpButton>
+                    <PopUpButton>Profile</PopUpButton>
                     <input type="text" placeholder="Search.." name="topic" onChange={handleTopic}/>
                 </div>
                 {showNews && <NewsCatalog topic ={topic} />}
