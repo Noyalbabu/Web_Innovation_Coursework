@@ -61,12 +61,12 @@
   color: rgb(204, 209, 193);
 }
 
-.tool_bar button, input{
+.tool_bar button, input , #links{
   /*display all the buttons underthis div in center*/
   justify-content: center;
   align-items: center;
   margin: 0 10px;
-  width: 280px;
+  width: 150px;
   height: 30px;
   background-color: rgba(231, 225, 197, 0.993);
   border-radius: 5px;
