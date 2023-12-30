@@ -3,6 +3,7 @@ import {BrowserRouter ,Routes, Route } from 'react-router-dom';
 import './App.css';
 import ProfilePage from './module/profilePage'; 
 import Navigation from './components/Navigation';
+import Login from './module/login';
 //Function to design and effects to button in the first page
 function App(){
         return (
@@ -10,7 +11,8 @@ function App(){
                 <BrowserRouter>
                     <Navigation/>
                     <Routes>
-                        <Route path="/module/profilePage" element={<ProfilePage/>}/>
+                        <Route path="/profilePage" element={<ProfilePage/>}/>
+                        <Route path="/login" element={<Login/>}/>
                     </Routes>
                 </BrowserRouter>
             </div> 
