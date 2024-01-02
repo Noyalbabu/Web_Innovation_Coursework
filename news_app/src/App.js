@@ -1,78 +1,22 @@
-import React, {useState, useEffect} from 'react';
-import NewsCatalog from './module/NewsCatalog';
+import React from 'react';
+import {BrowserRouter ,Routes, Route } from 'react-router-dom';
 import './App.css';
-
-function App() {
-    const [showNews, setShowNews] = useState(false);
-    const [topic, setTopic] = useState();
-    const [hover, setHover] = useState(false);
-
-    let restColor = 'rgb(234, 243, 236)';
-    let hoverColor = 'rgb(255, 255, 255)';
-
-    const handleClick = () => {
-        setShowNews(!showNews);
-    };
-
-    const handleTopic = (event) => {
-        var topic = event.target.value;
-        setTopic(topic);
-        console.log(topic);
-    };
-    useEffect(() => {},[hover]);
+import ProfilePage from './nav/profilePage'; 
+import Navigation from './nav/Navigation';
+import Login from './nav/login';
+//Function to design and effects to button in the first page
+function App(){
         return (
             <div className="news_app">
-                <div className='header'>
-                    <h1 >NEWS</h1>
-                    <h2 >Newer Efficient Way of Source</h2>
-                </div>
-                <div className='tool_bar'>
-                    <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
-                            onMouseOver={(event) => {
-                                event.preventDefault();
-                                setHover(true);
-                            }}
-                            onMouseLeave={(event) => {
-                                event.preventDefault();
-                                setHover(false);
-                            }}
-                            onClick={handleClick}>Explore</button>
-                            
-                    <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
-                            onMouseOver={(event) => {
-                                event.preventDefault();
-                                setHover(true);
-                            }}
-                            onMouseLeave={(event) => {
-                                event.preventDefault();
-                                setHover(false);
-                            }}>Navigation</button>
-                            
-                    <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
-                            onMouseOver={(event) => {
-                                event.preventDefault();
-                                setHover(true);
-                            }}
-                            onMouseLeave={(event) => {
-                                event.preventDefault();
-                                setHover(false);
-                            }}>Language</button>
-                            
-                    <button style={{backgroundColor: hover === true ? hoverColor : restColor}}
-                            onMouseOver={(event) => {
-                                event.preventDefault();
-                                setHover(true);
-                            }}
-                            onMouseLeave={(event) => {
-                                event.preventDefault();
-                                setHover(false);
-                            }}>Profile</button>
-
-                    <input type="text" placeholder="Search.." name="topic" onChange={handleTopic}/>
-                </div>
-                {showNews && <NewsCatalog topic ={topic} />}
+                <BrowserRouter>
+                    <Navigation/>
+                    <Routes>
+                        <Route path="/profilePage" element={<ProfilePage/>}/>
+                        <Route path="/login" element={<Login/>}/>
+                    </Routes>
+                </BrowserRouter>
             </div> 
-        )
+        );
     }
 
     
