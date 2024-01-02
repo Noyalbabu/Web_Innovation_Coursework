@@ -1,9 +1,9 @@
 import React from 'react';
 import {BrowserRouter ,Routes, Route } from 'react-router-dom';
 import './App.css';
-import ProfilePage from './module/profilePage'; 
-import Navigation from './components/Navigation';
-import Login from './module/login';
+import ProfilePage from './nav/profilePage'; 
+import Navigation from './nav/Navigation';
+import Login from './nav/login';
 //Function to design and effects to button in the first page
 function App(){
         return (
