@@ -37,9 +37,9 @@ function Login(){
     }}
 
     return(
-        <div>
-            <h1>Login Page</h1>
-            <div>
+        <div className="profile">
+            <h3>Login Page</h3>
+            <div className="profileForm" >
                 <form action="" onSubmit={handleSubmit}>
                     <label htmlFor="username">Username:</label><br />
                     <input type="text" name="username"  placeholder="Enter username" onChange={handleInput}/><br />

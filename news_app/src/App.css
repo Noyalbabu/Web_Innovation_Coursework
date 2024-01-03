@@ -50,6 +50,7 @@
   font-size: 50px;
   font-weight: bold;
   text-align: center;
+  letter-spacing: 10px;
 }
 
 .header h2{
@@ -69,3 +70,56 @@
 .tool_bar input{
   background-color:rgba(231, 225, 197, 0.993) ;
 }
+
+
+.profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+.profile h3 {
+  font-weight: bold;
+  text-align: center;
+  color: rgb(204, 209, 193);
+  letter-spacing: 5px;
+  margin-right: 10%;
+}
+.profile p{
+  text-align: center;
+  color: rgb(204, 209, 193);
+  margin-right: 25%;
+}
+.profileForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileForm input{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(204, 209, 193);
+  outline: none;
+}
+.profileForm button{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(204, 209, 193);
+  outline: none;
+  background-color: rgb(204, 209, 193);
+  color: rgb(61, 105, 88);
+  font-weight: bold;
+  margin-left: 20%;
+}
+
+.login {
+  
+}
+
+
