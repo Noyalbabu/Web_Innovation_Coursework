@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter ,Routes, Route } from 'react-router-dom';
 import './App.css';
 import ProfilePage from './nav/profilePage'; 
-import Navigation from './nav/Navigation';
+import Navigation from './nav/paths';
 import Login from './nav/login';
 //Function to design and effects to button in the first page
 function App(){
