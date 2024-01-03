@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { useNavigate } from 'react-router-dom';
-import profileValidate from "./profileValidation";
+import profileValidate from "./profileValidate";
 import { Tooltip } from 'react-tooltip';
 import axios from 'axios';
 

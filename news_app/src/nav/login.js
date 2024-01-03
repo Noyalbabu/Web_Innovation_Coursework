@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { useNavigate } from 'react-router-dom';
-import validateLogin from "./loginValidation";
+import validateLogin from "./loginValidate";
 import axios from "axios";
+import { IconName } from "react-icons/bs";
 
 function Login(){
     const navigate = useNavigate();
