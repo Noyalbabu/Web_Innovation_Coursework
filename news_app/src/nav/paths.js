@@ -3,6 +3,7 @@ import NewsCatalog from '../module/NewsCatalog';
 import '../App.css';
 import styled from "styled-components";
 
+
 const Test = styled.button`
     background-color: rgba(231, 225, 197, 0.993);
     box-shadow: 0px 2px 2px rgba(231, 225, 197, 0.993);
@@ -22,7 +23,7 @@ const Test = styled.button`
 function Navigation() {
     const [showNews, setShowNews] = useState(false);
     const [topic, setTopic] = useState();
-
+       // Use the useContext hook to get the value of the loggedIn context
     const handleClick = () => {
         setShowNews(!showNews);
     };
@@ -39,7 +40,6 @@ function Navigation() {
                     <h2 >Newer Efficient Way of Source</h2>
                 </div>
                 <div className='tool_bar'>
-                    
                         <a href="/login" >
                            <Test>Login</Test> 
                         </a>

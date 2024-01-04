@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import profileValidate from "./profileValidate";
 import { Tooltip } from 'react-tooltip';
 import axios from 'axios';
+import { BsPersonFillDown } from "react-icons/bs";
 
 function ProfilePage() {
   const [values, setValues] = useState({
@@ -40,7 +41,7 @@ function ProfilePage() {
 
   return (
     <div className ="profile">
-        <h3>My Profile</h3>
+      <BsPersonFillDown size={100}/>
       <div className="profileForm">
         <form action= '' onSubmit={handleSubmit} >
           <label htmlFor="name">Name:</label><br />

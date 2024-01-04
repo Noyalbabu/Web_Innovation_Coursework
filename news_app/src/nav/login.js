@@ -2,7 +2,9 @@ import React, {useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import validateLogin from "./loginValidate";
 import axios from "axios";
-import { IconName } from "react-icons/bs";
+import { BsPersonCheck } from "react-icons/bs";
+
+
 
 function Login(){
     const navigate = useNavigate();
@@ -16,7 +18,6 @@ function Login(){
     }
 
     const [errors, setErrors] = useState({
-
     })
 
     const handleSubmit = (event) => {
@@ -27,7 +28,8 @@ function Login(){
         axios.post('http://localhost:8081/profile', values)
         .then(res => {
             if(res.data === "Success"){
-                navigate('/');
+                alert("Login successful!")
+                navigate('/main');  
             }else{
                 alert("No account exist in the given username or password")
             }
@@ -39,7 +41,7 @@ function Login(){
 
     return(
         <div className="profile">
-            <h3>Login Page</h3>
+            <BsPersonCheck size={100}/>
             <div className="profileForm" >
                 <form action="" onSubmit={handleSubmit}>
                     <label htmlFor="username">Username:</label><br />
