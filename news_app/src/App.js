@@ -4,18 +4,17 @@ import './App.css';
 import ProfilePage from './nav/profilePage'; 
 import Navigation from './nav/paths';
 import Login from './nav/login';
-import Main from './nav/about';
+import About from './nav/about';
 //Function to design and effects to button in the first page
 function App(){
         return (
             <div className="news_app">
                 <BrowserRouter>
-                {/*here we modify the navigation. we import loggedIn variable*/}
                     <Navigation/>
                     <Routes>
                         <Route path="/profilePage" element={<ProfilePage/>}/>
                         <Route path="/login" element={<Login/>}/>
-                        <Route path="/main" element={<Main/>}/>
+                        <Route path="/about" element={<About/>}/>
                     </Routes>
                 </BrowserRouter>
             </div> 

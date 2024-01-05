@@ -1,12 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-;
-
-function Main() {
+function About() {
   return (
+  
     <div className="App">
     <h1>Hello</h1>    </div>
   );
   }
 
-export default Main;
+export default About;

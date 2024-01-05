@@ -1,10 +1,12 @@
 const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 // Create connection
 const db = mysql.createConnection({
@@ -53,17 +55,17 @@ app.post('/profile',(req, res)=>{
     const sql = "SELECT * FROM profile WHERE `username` = ? AND `password` = ?";
     db.query(sql, [req.body.username, req.body.password],(err, data)=>{
         if(err){
-            return res.json("Error");
+            return res.json("Error in the database");
         }
         if(data.length > 0){
             return res.json("Success");
         }else{
-            return res.json("Invalid username or password");
+            return res.json("Invalid");
         }
     });
 })
 
-
+//Setting The API FOR THE ABOUT PAGE. HERE WE CHECK IF THE USER IS AUTHORIZED TO SEE THE PAGE
 
 
 //Connection
