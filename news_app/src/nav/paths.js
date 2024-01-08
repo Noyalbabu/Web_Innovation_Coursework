@@ -3,6 +3,7 @@ import NewsCatalog from '../module/NewsCatalog';
 import '../App.css';
 import styled from "styled-components";
 
+const pass = localStorage.getItem("token");
 const Test = styled.button`
     background-color: rgba(231, 225, 197, 0.993);
     box-shadow: 0px 2px 2px rgba(231, 225, 197, 0.993);
@@ -20,7 +21,6 @@ const Test = styled.button`
 `
 
 function Navigation() {
-    const pass = localStorage.getItem("token");
     const [showNews, setShowNews] = useState(false);
     const [topic, setTopic] = useState();
        // Use the useContext hook to get the value of the loggedIn context
@@ -48,9 +48,9 @@ function Navigation() {
                     <a href="/profilePage" >
                         <Test>Profile</Test>
                     </a>
-                    {pass === "loginToken" ? <a href='/about'>
+                    {pass === null ? <p>You have to log in</p>: <a href='/about'>
                         <Test>About US</Test>
-                            </a> : <p>You have to log in</p>
+                            </a> 
                     } 
                     <Test>LogOut</Test>
                     <Test>Language</Test>
