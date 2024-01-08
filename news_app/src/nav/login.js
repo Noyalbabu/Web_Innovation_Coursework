@@ -1,12 +1,10 @@
 import React, {useState} from "react";
-import { useNavigate } from 'react-router-dom';
 import validateLogin from "./loginValidate";
 import axios from "axios";
 import { BsPersonCheck } from "react-icons/bs";
 
 
 function Login(){
-    const navigate = useNavigate();
     const [values, setValues] = useState({
         username: "",
         password: ""
@@ -27,9 +25,9 @@ function Login(){
         axios.post('http://localhost:8081/profile', values)
         .then(res => {
             if(res.data === "Success"){
-                localStorage.setItem("token", values.username);
-                alert("Login successful!")
-                navigate('/');  
+                sessionStorage.setItem("token", "loginToken");
+                alert("Login successful!");
+                window.location.href = '/'; 
             }
             else{
                 alert("No account exist in the given username or password")

@@ -5,6 +5,7 @@ import ProfilePage from './nav/profilePage';
 import Navigation from './nav/paths';
 import Login from './nav/login';
 import About from './nav/about';
+import LogOut from './nav/logout';
 //Function to design and effects to button in the first page
 function App(){
         return (
@@ -15,6 +16,7 @@ function App(){
                         <Route path="/profilePage" element={<ProfilePage/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/about" element={<About/>}/>
+                        <Route path= "/logout" element = {<LogOut/>}/>
                     </Routes>
                 </BrowserRouter>
             </div> 
