@@ -14,7 +14,6 @@ const Test = styled.button`
     background-color: rgba(231, 225, 197, 0.993);
     box-shadow: 0px 2px 2px rgba(231, 225, 197, 0.993);
     font-size: 14px;
-    font-weight: bold;
     margin: 10px 10px;
     padding: 10px 30px;
     border-radius: 5px;
@@ -48,14 +47,13 @@ function Navigation() {
     };
 
     const handleLangClick = () => {
-        var x = document.getElementById("langTitle");
         var y = document.getElementsByClassName("dropdown-content");
         if (y[0].style.display === "none") {
             y[0].style.display = "block";
-            x.style.color = "black";
+          
         } else {
             y[0].style.display = "none";
-            x.style.color = "black";
+            
         }
     };
     const handleTopic = (event) => {
