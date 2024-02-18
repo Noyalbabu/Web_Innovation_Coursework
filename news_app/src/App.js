@@ -22,10 +22,4 @@ function App(){
             </div> 
         );
     }
-
-    
-/*As you see I used the useState hook to create a state variable called showNews and a function called setShowNews. 
-The button 'Explore' is used to toggle the news. 
-On clicking the button you can see the and hide the news.
-*/
 export default App;
