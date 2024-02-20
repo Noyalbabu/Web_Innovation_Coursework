@@ -22,7 +22,7 @@ const NewsCatalog = ({topic, lang}) => {
             const fetchnewsArticle = async () => {
                 try{
                 console.log("Fetching news data:", topic, "in language", lan);
-                const response = await axios.get(`https://newsapi.org/v2/everything?q=${topic}&from=2023-12-27&sortBy=popularity&language=${lan}&apiKey=43d13539acbd4ba4814f3e166a9130d7`);
+                const response = await axios.get(`https://newsapi.org/v2/everything?q=${topic}&sortBy=popularity&language=${lan}&apiKey=1051104a65c74049ac2992ecf1b6d7cf`);
                 setnewsArticle(response.data.articles);
                 //print the data 
                 console.log(response);
