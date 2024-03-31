@@ -25,7 +25,7 @@ function Login(){
         axios.post('http://localhost:8081/profile', values)
         .then(res => {
             if(res.data === "Success"){
-                sessionStorage.setItem("token", "loginToken");
+                sessionStorage.setItem("token", values.username);
                 alert("Login successful!");
                 window.location.href = '/'; 
             }

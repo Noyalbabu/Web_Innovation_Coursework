@@ -85,7 +85,8 @@ function Navigation() {
                             <a href='/about'>
                                 <Test>About US</Test>
                             </a>
-                            <Test>My Account</Test>
+                            <a href="/account">
+                            <Test>My Account</Test></a>
                             <a href="/logout"><Test>LogOut</Test></a>
                             <FormControl component="fieldset">
                                 <FormLabel component="legend" id="langTitle" onClick={handleLangClick}>Language</FormLabel>

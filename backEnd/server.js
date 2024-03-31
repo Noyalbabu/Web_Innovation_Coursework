@@ -66,7 +66,24 @@ app.post('/profile',(req, res)=>{
     });
 })
 
-//Setting The API FOR THE ABOUT PAGE. HERE WE CHECK IF THE USER IS AUTHORIZED TO SEE THE PAGE
+//Setting The API FOR THE ACCOUNT PAGE. HERE WE GET THE USER DATA FROM THE DATABASE
+app.get('/profile', (req, res)=>{
+    const username = req.query.username; // Getting username from query parameters
+    const sql = "SELECT * FROM profile WHERE `username` = ?";
+    db.query(sql, [username],(err, data)=>{
+        console.log('gethere:', username);
+        if(err){
+            return res.json("Error in the database");
+        }
+
+        if(data.length > 0){
+            return res.json(data[0]);
+        }
+        else {
+            return res.json("User not found");
+        }
+    });
+});
 
 
 //Connection
