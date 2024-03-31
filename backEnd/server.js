@@ -54,6 +54,7 @@ app.post('/news_app', (req, res) => {
 app.post('/profile',(req, res)=>{
     const sql = "SELECT * FROM profile WHERE `username` = ? AND `password` = ?";
     db.query(sql, [req.body.username, req.body.password],(err, data)=>{
+    console.log(req.body.username, req.body.password);
         if(err){
             return res.json("Error in the database");
         }

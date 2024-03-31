@@ -1,14 +1,6 @@
 import React from "react";
 
 function About() {
-  const pass = sessionStorage.getItem("token");
-  //check if pass is not empty
-  if(pass === null){
-      return (
-        alert("You have to log in to see this page")
-        );
-    }
-    else{
     return (
       <div className="App">
       <h1>Hello</h1>
@@ -16,6 +8,5 @@ function About() {
       </div>
     );
   }
-}
 
 export default About;

@@ -68,11 +68,14 @@ function Navigation() {
                     <h2 >Newer Efficient Way of Source</h2>
                 </div>
                 <div className='tool_bar'>
-                    <a href="/profilePage">
-                        <Test>Profile</Test>
-                    </a>
                     {pass === null ? (
                         <>
+                            <a href='/about'>
+                                <Test>About US</Test>
+                            </a>
+                            <a href="/profilePage">
+                            <Test>Profile</Test>
+                            </a>
                             <a href="/login"><Test>Login</Test></a>
                             <p>{showMsg}</p>
                         </>
@@ -82,6 +85,7 @@ function Navigation() {
                             <a href='/about'>
                                 <Test>About US</Test>
                             </a>
+                            <Test>My Account</Test>
                             <a href="/logout"><Test>LogOut</Test></a>
                             <FormControl component="fieldset">
                                 <FormLabel component="legend" id="langTitle" onClick={handleLangClick}>Language</FormLabel>
