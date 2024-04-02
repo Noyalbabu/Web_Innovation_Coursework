@@ -67,27 +67,23 @@ function Navigation() {
                     <h1 >NEWS</h1>
                     <h2 >Newer Efficient Way of Source</h2>
                 </div>
-                <div className='tool_bar'>
+                <div className ='tool_bar'>
                     {pass === null ? (
                         <>
-                            <a href='/about'>
-                                <Test>About US</Test>
-                            </a>
-                            <a href="/profilePage">
-                            <Test>Profile</Test>
-                            </a>
-                            <a href="/login"><Test>Login</Test></a>
+                        
+                            <Test><a href='/about' >About US</a></Test>
+                            <Test> <a href="/profilePage">Profile</a></Test>
+                            <Test><a href="/login">Login</a></Test>
                             <p>{showMsg}</p>
                         </>
+        
                     ) : (
                         <>
                             <Test onClick={handleClick}>Explore</Test>
-                            <a href='/about'>
-                                <Test>About US</Test>
-                            </a>
-                            <a href="/account">
-                            <Test>My Account</Test></a>
-                            <a href="/logout"><Test>LogOut</Test></a>
+                           
+                            <Test><a href='/about'>About US</a></Test>
+                            <Test><a href="/account">My Account</a></Test>
+                           <Test> <a href="/logout">LogOut</a></Test>
                             <FormControl component="fieldset">
                                 <FormLabel component="legend" id="langTitle" onClick={handleLangClick}>Language</FormLabel>
                                 <FormGroup className="dropdown-content">
@@ -109,7 +105,7 @@ function Navigation() {
                             <input type="text" placeholder="Search.." name="topic" onChange={handleTopic} />
                         </>
                     )}
-                <a href="/"><BsHouseDoorFill size={40} color="rgba(231, 225, 197, 0.993)"/></a>
+                    <a href="/"><BsHouseDoorFill size={40} color="#3B0404"/></a>
                 </div>
                 {showNews && <NewsCatalog topic ={topic} lang= {lang}/>}
             </div> 

@@ -1,4 +1,3 @@
-import { ThemeConsumer } from 'styled-components';
 import './NewsElement.css';
 import React, {useState} from 'react';
 
@@ -15,34 +14,35 @@ const NewsElement = ({urlToImage, title, description, url,source, date}) => {
     //DISPLAY ALL THE COMMENTS USERS HAD MADE
     const [displayComment, setDisplayComment] = useState([]);
     const ondisplayComment = () => {
-        var commentBox = document.getElementById('comment-input');
-        if (commentBox.value === '') {
+        if (!comment.trim()) {
             alert('Please enter a comment');
+        } else {
+            setDisplayComment([...displayComment, comment]);
+            setComment('');
         }
-        else{
-        setDisplayComment((displayComment) => [...displayComment, comment]);
-        //remove the text from the comment box after the user submit the comment
-        commentBox.value = '';
-    } }
+    };
     return (
         <div className="newsWebsite">
             <div className="newsElement">
-            <img className='newsImage' src={urlToImage} alt={urlToImage}/>
-            <h1 className='newsTitle'>{title}</h1>
-            <p className='newsArticle'>{description}</p>
-            <h3>Source:{source}</h3>
-            <h3>Date: {date}</h3>
-            <h3><a href={url}>Look Up for more Info!</a></h3>
-    
-            <div className="commentSection">
-            {displayComment.map((text) =>(
-                <div id='comment-display'>{text}</div>
-         ) )}
-            <h3 id='comment-title'>Comment</h3>
-            <textArea id='comment-input'
-            value={comment}
-            onChange={getComment} placeholder = {pass}/>
-            <button onClick={ondisplayComment} id='comment-sub'>Submit</button></div>
+                <img className='newsImage' src={urlToImage} alt={urlToImage}/>
+                <h1 className='newsTitle'>{title}</h1>
+                <p className='newsArticle'>{description}</p>
+                <h4 style={{backgroundColor: 'rgba(231, 225, 197, 0.993)', fontStyle:'italic' , fontWeight:'500'}}>Source: {source}</h4>
+                <h4 style={{backgroundColor: 'rgba(231, 225, 197, 0.993)', fontStyle:'italic' , fontWeight:'500'}}>Date: {date}</h4>
+                <h4 style={{backgroundColor: 'rgba(231, 225, 197, 0.993)'}} ><a href={url} style={{backgroundColor: 'rgba(231, 225, 197, 0.993)'}}>Look Up for more Info!</a></h4>
+                <div className="commentSection">
+                <h3 id='comment-title'>Comment</h3>
+                    {displayComment.map((comment, index) => {
+                        return (
+                            <div key={index} id='comment-display'> {comment} <p>{pass}</p>
+                            </div>
+                        );
+                    })}
+                    <textarea id='comment-input'
+                    value={comment}
+                    onChange={getComment} placeholder = {pass}/>
+                    <button onClick={ondisplayComment} id='comment-sub'>Submit</button>
+                </div>
             </div>   
         </div>
     )

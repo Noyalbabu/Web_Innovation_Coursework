@@ -1,5 +1,5 @@
 *{
-  background-color: #3B0404;
+  background-color: #d3a49e;
 }
 .App {
   text-align: center;
@@ -48,19 +48,21 @@
 
 
 .header h1{
-  font-size: 50px;
+  font-size: 10vh;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 10vh;
+  color: #710019;
 }
 
 .header h2{
-  font-size: 20px;
+  font-size: 4vh;
   font-style: italic;
   font-weight: bolder;
   text-align: center;
-  letter-spacing: 5px;
-  color: rgb(204, 209, 193);
+  letter-spacing: 2vh;
+  color:#593C3E;
+  padding-top: -5vh;
 }
 
 .tool_bar{
@@ -68,6 +70,8 @@
   align-items: center;
   display: flex;
   position: relative;
+  background-color:#3B0404;
+  color:#710019;
 }
 
 .tool_bar p{
@@ -78,23 +82,36 @@
   margin-right: -50px;
   }
 
+.tool_bar a{
+  /*remove line from link text*/
+  text-decoration: none;
+  
+}
+
 .tool_bar input{
   display: flex;
-  background-color:rgba(231, 225, 197, 0.993) ;
   box-shadow: 0px 2px 2px rgba(231, 225, 197, 0.993);
   margin: 10px 10px;
   padding: 10px 2px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  background-color: rgba(231, 225, 197, 0.993);
  }
 
-.tool_bar #langTitle{
+ .tool_bar a{
+  background-color: rgba(231, 225, 197, 0.993);
+ }
+ 
+.MuiFormControl-root{
+  background-color:#3B0404;
+}
+.MuiFormControl-root #langTitle{
   background-color: rgba(231, 225, 197, 0.993);
   box-shadow: 0px 2px 2px rgba(231, 225, 197, 0.993);
   color: black;
   font-size: 14px;
-  margin: 10px 10px;
+  margin: 1px 10px;
   padding: 10px 30px;
   border-radius: 5px;
   border: none;
@@ -106,19 +123,24 @@
   }
 }
 
-.dropdown-content {
-  display: none;
+.MuiFormGroup-root{
+
   position: absolute;
-  background-color: rgba(61, 105, 88, 0.863);
   overflow: auto;
+  color: white;
+  border: 5px solid#3B0404;
+  
+}
+.MuiButtonBase-root{
+  box-shadow: 2px 2px 2px #3B0404;
+  background-color: #3B0404;
 }
 
 .dropdown-content Checkbox{
-  color: black;
   padding: 12px 16px;
-  text-decoration: none;
   display: block;
 }
+
 
 .show {display: block;}
 
@@ -143,11 +165,8 @@
   border-radius: 5px;
   border: 1px solid rgb(204, 209, 193);
   outline: none;
-  background-color: rgb(204, 209, 193);
-  color: rgb(61, 105, 88);
+  background-color: rgba(231, 225, 197, 0.993);
   font-weight: bold;
   cursor: pointer;
   margin-left: 39%;
 }
-
-

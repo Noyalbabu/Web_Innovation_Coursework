@@ -45,14 +45,14 @@ function Login(){
             <BsPersonCheck size={100}/>
             <div className="profileForm" >
                 <form action="" onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username:</label><br />
+                    <label htmlFor="username">Username</label><br />
                     <input type="text" 
                     name="username"  
                     placeholder="Enter username" 
                     onChange={handleInput}
                     /><br />
                     {errors.username && <span>{errors.username}</span>}<br />
-                    <label htmlFor="password">Password:</label><br />
+                    <label htmlFor="password">Password</label><br />
                     <input type="password" 
                     name="password" 
                     onChange={handleInput} 
