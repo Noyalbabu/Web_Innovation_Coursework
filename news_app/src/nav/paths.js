@@ -83,7 +83,7 @@ function Navigation() {
                             <Test><a href='/about' >About US</a></Test>
                             <Test> <a href="/profilePage">Profile</a></Test>
                             <Test><a href="/login">Login</a></Test>
-                            <p style={{backgroundColor:'#d3a49e'}}>{showMsg}</p>
+                            <p style={{backgroundColor:'transparent'}}>{showMsg}</p>
                         </>
         
                     ) : (
