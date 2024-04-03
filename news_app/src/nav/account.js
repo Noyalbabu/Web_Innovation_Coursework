@@ -24,10 +24,10 @@ function Account() {
     }, []);
 
     return (
-        <div className ="profile">
-            <FaUserCog size={100}/>
+        <div className ="account">
+            <FaUserCog size={100} style={{backgroundColor:' #63747A'}}/>
             {userData && (
-                <div>
+                <div className ="account-display">
                     <p>Name:  {userData.name}</p>
                     <p>Username:  {userData.username}</p>
                     <p>Email:  {userData.email}</p>

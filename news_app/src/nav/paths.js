@@ -8,6 +8,11 @@ import {FormLabel} from "@material-ui/core";
 import {FormGroup} from "@material-ui/core";
 import {FormControlLabel} from "@material-ui/core";
 import { BsHouseDoorFill } from "react-icons/bs";
+import image1 from '../images/img1.jpg';
+import image2 from '../images/img2.jpg';
+import image3 from '../images/img3.jpg';
+import image4 from '../images/img4.jpg';
+
 
 const pass = sessionStorage.getItem("token");
 const Test = styled.button`
@@ -26,6 +31,10 @@ const Test = styled.button`
     }
 `
 function Navigation() {
+    //setting randome image for the header
+    const bgImages = [image1, image2, image3, image4];
+    const choosenBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+   
 
     const [showNews, setShowNews] = useState();
     const showMsg  = useState('You have to login to explore this site!');
@@ -63,9 +72,9 @@ function Navigation() {
     };
         return (
             <div className="news_app">
-                <div className='header'>
-                    <h1 >NEWS</h1>
+                <div className='header' style={{ backgroundImage: `url(${choosenBg})`}}>
                     <h2 >Newer Efficient Way of Source</h2>
+                    <h1 >NEWS</h1>
                 </div>
                 <div className ='tool_bar'>
                     {pass === null ? (
@@ -74,7 +83,7 @@ function Navigation() {
                             <Test><a href='/about' >About US</a></Test>
                             <Test> <a href="/profilePage">Profile</a></Test>
                             <Test><a href="/login">Login</a></Test>
-                            <p>{showMsg}</p>
+                            <p style={{backgroundColor:'#d3a49e'}}>{showMsg}</p>
                         </>
         
                     ) : (
@@ -105,7 +114,7 @@ function Navigation() {
                             <input type="text" placeholder="Search.." name="topic" onChange={handleTopic} />
                         </>
                     )}
-                    <a href="/"><BsHouseDoorFill size={40} color="#3B0404"/></a>
+                    <a href="/"><BsHouseDoorFill size={40} color="rgba(231, 225, 197, 0.993)"  style={{backgroundColor:'#3B0404'}}/></a>
                 </div>
                 {showNews && <NewsCatalog topic ={topic} lang= {lang}/>}
             </div> 

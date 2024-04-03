@@ -41,7 +41,7 @@ function ProfilePage() {
 
   return (
     <div className ="profile">
-      <BsPersonFillDown size={100}/>
+      <BsPersonFillDown size={100} color="#710019"  style={{backgroundColor:'#E5C951'}} />
       <div className="profileForm">
         <form action= '' onSubmit={handleSubmit} >
           <label htmlFor="name">Name:</label><br />

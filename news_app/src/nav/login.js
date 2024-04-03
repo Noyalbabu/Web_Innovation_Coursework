@@ -41,9 +41,9 @@ function Login(){
     }}
 
     return(
-        <div className="profile">
-            <BsPersonCheck size={100}/>
-            <div className="profileForm" >
+        <div className="login">
+            <BsPersonCheck size={100} color="#710019"  style={{backgroundColor:'#E5C951'}}/>
+            <div className="loginForm" >
                 <form action="" onSubmit={handleSubmit}>
                     <label htmlFor="username">Username</label><br />
                     <input type="text" 
@@ -60,9 +60,9 @@ function Login(){
                     {errors.password && <span>{errors.password}</span>}<br />
                     <button type="submit">Login</button>
                 </form>
-                <p>Do not have an account? Setup a Profile!</p>
-                    <a href="/profilePage" >
-                        <button type="button">Profile</button></a>
+                <p >Do not have an account? Setup a Profile!</p>
+                <a href="/profilePage">
+                    <button type="button">Profile</button></a>
             </div>
         </div>
     );
