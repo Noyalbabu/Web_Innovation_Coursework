@@ -26,7 +26,6 @@ function Login(){
         .then(res => {
             if(res.data === "Success"){
                 sessionStorage.setItem("token", values.username);
-                alert("Login successful!");
                 window.location.href = '/'; 
             }
             else{

@@ -26,8 +26,11 @@ const NewsCatalog = ({topic, lang}) => {
                 setnewsArticle(response.data.articles);
                 //print the data 
                 console.log(response);
+                document.getElementById('networkerror').style.display = 'none';
                 } catch (error) {
                     console.error("Error fetching news:", error);
+                    //display an error message
+                    document.getElementById('networkerror').style.display = 'block';
                 }
         };
             fetchnewsArticle();
@@ -36,6 +39,7 @@ const NewsCatalog = ({topic, lang}) => {
     return (
         <div className="news_app">
             <section>
+               <h4 id='networkerror' style={{display:'none', textAlign:'center'}}>Error in database</h4>
                 {articles.map(article =>{
                     return (
                         <NewsElement

@@ -73,6 +73,25 @@
   background-color: transparent;
 }
 
+#scrollmsg{
+  background-color: transparent;
+  color: black;
+  font-weight: 500;
+  letter-spacing: 2px;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  animation: scrollLeft  20s linear infinite; /* Adjust animation duration as needed */
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(100%); /* Start from the right */
+  }
+  to {
+    transform: translateX(-100%); /* Move to the left */
+  }
+}
+
 .tool_bar{
   justify-content: center;
   align-items: center;

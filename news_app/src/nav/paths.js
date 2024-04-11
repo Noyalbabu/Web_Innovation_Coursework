@@ -37,7 +37,7 @@ function Navigation() {
    
 
     const [showNews, setShowNews] = useState();
-    const showMsg  = useState('You have to login to explore this site!');
+    const showMsg  = useState('Kindly create an account and log in to explore this site!');
     const [topic, setTopic] = useState();
     const [lang, setLang] = useState({
         en: false,
@@ -83,7 +83,7 @@ function Navigation() {
                             <Test><a href='/about' >About US</a></Test>
                             <Test> <a href="/profilePage">Profile</a></Test>
                             <Test><a href="/login">Login</a></Test>
-                            <p style={{backgroundColor:'transparent'}}>{showMsg}</p>
+                            <p id='scrollmsg'>{showMsg}</p>
                         </>
         
                     ) : (
