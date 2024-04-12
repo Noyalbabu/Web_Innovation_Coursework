@@ -30,6 +30,10 @@ function ProfilePage() {
           alert("Username, email or password entered already exists! Please try again!")
           navigate('/profilePage');
         }
+        else if(res.data === "Error"){
+          alert("Error in creating profile! Please try again!")
+          navigate('/profilePage');
+        }
         else{
           alert("Profile created successfully!")
           navigate('/login');

@@ -41,7 +41,7 @@ const NewsElement = ({urlToImage, title, description, url,source, date}) => {
                     <textarea id='comment-input'
                     value={comment}
                     onChange={getComment} placeholder = {pass}/>
-                    <button onClick={ondisplayComment} id='comment-sub'>Submit</button>
+                    <button onClick={ondisplayComment} id='comment-sub'>Post</button>
                 </div>
             </div>   
         </div>

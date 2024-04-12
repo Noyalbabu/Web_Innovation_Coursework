@@ -28,6 +28,9 @@ function Login(){
                 sessionStorage.setItem("token", values.username);
                 window.location.href = '/'; 
             }
+            else if(res.data === "Error in the database"){
+                alert("Error in the database");
+            }
             else{
                 alert("No account exist in the given username or password")
             }

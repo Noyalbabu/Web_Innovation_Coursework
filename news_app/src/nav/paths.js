@@ -88,11 +88,8 @@ function Navigation() {
         
                     ) : (
                         <>
-                            <Test onClick={handleClick}>Explore</Test>
-                           
                             <Test><a href='/about'>About US</a></Test>
                             <Test><a href="/account">My Account</a></Test>
-                           <Test> <a href="/logout">LogOut</a></Test>
                             <FormControl component="fieldset">
                                 <FormLabel component="legend" id="langTitle" onClick={handleLangClick}>Language</FormLabel>
                                 <FormGroup className="dropdown-content">
@@ -112,6 +109,8 @@ function Navigation() {
                                 </FormGroup>
                             </FormControl>
                             <input type="text" placeholder="Search.." name="topic" onChange={handleTopic} />
+                            <Test onClick={handleClick}>Explore</Test>
+                            <Test> <a href="/logout">LogOut</a></Test>
                         </>
                     )}
                     <a href="/"><BsHouseDoorFill size={40} color="rgba(231, 225, 197, 0.993)"  style={{backgroundColor:'#3B0404'}}/></a>
