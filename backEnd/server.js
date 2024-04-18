@@ -1,10 +1,12 @@
 const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 // Create connection
 const db = mysql.createConnection({
@@ -52,16 +54,37 @@ app.post('/news_app', (req, res) => {
 app.post('/profile',(req, res)=>{
     const sql = "SELECT * FROM profile WHERE `username` = ? AND `password` = ?";
     db.query(sql, [req.body.username, req.body.password],(err, data)=>{
+    console.log(req.body.username, req.body.password);
         if(err){
-            return res.json("Error");
+            return res.json("Error in the database");
         }
         if(data.length > 0){
             return res.json("Success");
         }else{
-            return res.json("Invalid username or password");
+            return res.json("Invalid");
         }
     });
 })
+
+//Setting The API FOR THE ACCOUNT PAGE. HERE WE GET THE USER DATA FROM THE DATABASE
+app.get('/profile', (req, res)=>{
+    const username = req.query.username; // Getting username from query parameters
+    const sql = "SELECT * FROM profile WHERE `username` = ?";
+    db.query(sql, [username],(err, data)=>{
+        console.log('gethere:', username);
+        if(err){
+            return res.json("Error in the database");
+        }
+
+        if(data.length > 0){
+            return res.json(data[0]);
+        }
+        else {
+            return res.json("User not found");
+        }
+    });
+});
+
 
 //Connection
 app.listen(8081, ()=>{

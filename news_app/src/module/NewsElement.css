@@ -1,33 +1,43 @@
-#main{
-    justify-content: center;
-    text-align: center;
-    margin: 2rem 0;
-    letter-spacing: 5px;
-}
 
 .newsWebsite {
+    display: flex;
     justify-content: center;
     display: flex;
+ 
 }
 
 .newsElement {
     padding :20px;
     border: 2px solid black;
     width:50%;
+    height: 50%;
     margin-top: 10px;
     margin-bottom: 20px;
+    background-color: rgba(231, 225, 197, 0.993);
+    color:#710019;
+    border: none;
+    border-radius: 6vh;
+  
 }
 
 .newsTitle {
     font-size: 20px;
     font-weight: bold;
+    background-color: rgba(231, 225, 197, 0.993);
 }
 .newsImage{
-    width: 300px;
-}
+    width: 100%;
+    height: 100%;
+    border-radius: 6vh;
+    box-shadow: 0px 2px 2px rgba(149, 124, 11, 0.993);
+    display: block;
+    margin: auto;
+} 
+    
 
 .newsArticle{
-    font-size: 15px;
+    background-color: rgba(231, 225, 197, 0.993);
+    font-size: 12px;
     font-weight: normal;
 }
 .display{
@@ -35,4 +45,62 @@
     justify-content: center;
     align-items: center;
     float: right;
+}
+.commentSection{
+    background-color:#482810;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 20px;
+    border-radius: 1vh;
+}
+
+#comment-title{
+    margin: 12px 0;
+    font-size: 20px;
+    font-weight: 500;
+    background-color:#482810;
+    color: aliceblue;
+}
+
+#comment-input{
+    width: auto;
+    height: auto;
+    background-color: rgba(231, 225, 197, 0.993);
+    border-radius: 5px;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-right: 1vh;
+}
+
+#comment-sub{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 40px;
+    width: 80px;
+    background-color: rgb(204, 209, 193);
+    border-radius: 5px ;
+    border-style: none;
+    cursor: pointer;
+    margin-left: 1vh;
+
+}
+#comment-display {
+    width: 465px;
+    height: 30px;
+    background-color:#482810;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 1vh;
+    word-break: break-all;
+    color: rgba(231, 228, 75, 0.907);
+}
+#comment-display p{
+    background-color:#482810;
+    color: rgba(231, 228, 75, 0.907);
+    font-size: 8px;
+    letter-spacing: 5px ;
+    text-align: right; 
 }

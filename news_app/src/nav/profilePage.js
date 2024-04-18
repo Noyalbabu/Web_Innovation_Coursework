@@ -1,9 +1,9 @@
 import React, { useState} from "react";
 import { useNavigate } from 'react-router-dom';
-import profileValidate from "./ProfileValidation";
+import profileValidate from "./profileValidate";
 import { Tooltip } from 'react-tooltip';
 import axios from 'axios';
-
+import { BsPersonFillDown } from "react-icons/bs";
 
 function ProfilePage() {
   const [values, setValues] = useState({
@@ -30,6 +30,10 @@ function ProfilePage() {
           alert("Username, email or password entered already exists! Please try again!")
           navigate('/profilePage');
         }
+        else if(res.data === "Error"){
+          alert("Error in creating profile! Please try again!")
+          navigate('/profilePage');
+        }
         else{
           alert("Profile created successfully!")
           navigate('/login');
@@ -40,41 +44,40 @@ function ProfilePage() {
   }
 
   return (
-    <div>
-    <h1>Profile Page</h1>
-    <div>
-    <form action= '' onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label><br />
-      <input type="text" name="name" onChange={handleInput}/><br />
-      {errors.name && <span>{errors.name}</span>}<br />
-      <label htmlFor="username">Username:</label><br />
-      <input type="text" name="username" onChange={handleInput}/><br />
-      {errors.username && <span>{errors.username}</span>}<br />
-      <label htmlFor="email">Email:</label><br />
-      <input type="text" name="email" onChange={handleInput}/><br />  
-      {errors.email && <span>{errors.email}</span>}<br />
-      <label htmlFor="password">Password:</label><br />
-      <input type="password" name="password" id = 'password' onChange={handleInput} /><br />
-      {errors.password && <span>{errors.password}</span>}<br />
-      <label htmlFor="age">Age:</label><br />
-      <input type="number" name="age" onChange={handleInput}/><br />
-      {errors.age && <span>{errors.age}</span>}<br />
-      <button type="submit" value="Submit"> Create</button>
-      <p>Already created a profile? Login In!</p>
-      <a href="/login" >
-        <button type="button">Login</button></a>
-    </form>
-    <Tooltip anchorSelect="#password" place="top">
-      <p>Password Rules</p>
-        <ul>
-          <li>Atleast one digit in the word</li>
-          <li>Atleast one UPPERCASE letter</li>
-          <li>Atleast one lowercase letter</li>
-          <li>Minimum length of the word is 8!</li>
-
-        </ul>
-    </Tooltip>
-    </div>
+    <div className ="profile">
+      <BsPersonFillDown size={100} color="#710019"  style={{backgroundColor:'#E5C951'}} />
+      <div className="profileForm">
+        <form action= '' onSubmit={handleSubmit} >
+          <label htmlFor="name">Name:</label><br />
+          <input type="text" name="name" onChange={handleInput}/><br />
+          {errors.name && <span>{errors.name}</span>}<br />
+          <label htmlFor="username">Username:</label><br />
+          <input type="text" name="username" onChange={handleInput}/><br />
+          {errors.username && <span>{errors.username}</span>}<br />
+          <label htmlFor="email">Email:</label><br />
+          <input type="text" name="email" onChange={handleInput}/><br />  
+          {errors.email && <span>{errors.email}</span>}<br />
+          <label htmlFor="password">Password:</label><br />
+          <input type="password" name="password" id = 'password' onChange={handleInput} /><br />
+          {errors.password && <span>{errors.password}</span>}<br />
+          <label htmlFor="age">Age:</label><br />
+          <input type="number" name="age" onChange={handleInput}/><br />
+          {errors.age && <span>{errors.age}</span>}<br />
+          <button type="submit" value="Submit">Create</button>
+          <p>Already created a profile? Login In!</p>
+          <a href="/login" >
+            <button type="button">Login</button></a>
+        </form>
+      <Tooltip anchorSelect="#password" place="left" >
+        <p>Password Rules</p>
+          <ul>
+            <li>Atleast one digit in the word</li>
+            <li>Atleast one UPPERCASE letter</li>
+            <li>Atleast one lowercase letter</li>
+            <li>Minimum length of the word is 8!</li>
+          </ul>
+      </Tooltip>
+      </div>
   </div>
   );
 }

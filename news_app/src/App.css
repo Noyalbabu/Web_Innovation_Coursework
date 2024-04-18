@@ -1,5 +1,5 @@
 *{
-  background-color: rgba(61, 105, 88, 0.863);
+  background-color: #d3a49e;
 }
 .App {
   text-align: center;
@@ -41,31 +41,264 @@
 
 .news_app{
   align-items: center;
+}
+.header{
+  background-size: cover;
+  height: 100vh; /* Ensure the header takes up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  font-size: 20px;
-  color: rgb(245, 246, 241);
+  text-align: center;
 }
 
+
 .header h1{
-  font-size: 50px;
+  font-size: 10vh;
   font-weight: bold;
   text-align: center;
+  letter-spacing: 10vh;
+  color: #710019;
+  background-color: transparent;
 }
 
 .header h2{
-  font-size: 20px;
+  font-size: 4vh;
   font-style: italic;
   font-weight: bolder;
   text-align: center;
-  letter-spacing: 5px;
-  color: rgb(204, 209, 193);
+  letter-spacing: 2vh;
+  color:#593C3E;
+  margin-top: 1vh;
+  background-color: transparent;
+}
+
+#scrollmsg{
+  background-color: transparent;
+  color: black;
+  font-weight: 500;
+  letter-spacing: 2px;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  animation: scrollLeft  20s linear infinite; /* Adjust animation duration as needed */
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(100%); /* Start from the right */
+  }
+  to {
+    transform: translateX(-100%); /* Move to the left */
+  }
 }
 
 .tool_bar{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  background-color:#3B0404;
+  color:#710019;
+}
+
+.tool_bar p{
+  font-size: 12px;
+  position: absolute;
+  top: 100%;
+  margin-left: -50px;
+  margin-right: -50px;
+  }
+
+.tool_bar a{
+  /*remove line from link text*/
+  text-decoration: none;
+  
+}
+
+.tool_bar input{
+  display: flex;
+  box-shadow: 0px 2px 2px rgba(231, 225, 197, 0.993);
+  margin: 10px 10px;
+  padding: 10px 2px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(231, 225, 197, 0.993);
+ }
+
+ .tool_bar a{
+  background-color: rgba(231, 225, 197, 0.993);
+  color: black;
+ }
+ 
+.MuiFormControl-root{
+  background-color:#3B0404;
+}
+.MuiFormControl-root #langTitle{
+  background-color: rgba(231, 225, 197, 0.993);
+  box-shadow: 0px 2px 2px rgba(231, 225, 197, 0.993);
+  color: black;
+  font-size: 14px;
+  margin: 1px 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+  transition: ease  background-color 250ms;
+  &:hover {
+      background-color: white;
+  }
+}
+.MuiFormGroup-root{
+
+  position: absolute;
+  overflow: auto;
+  color: white;
+  border: 5px solid#3B0404;
+  
+}
+.MuiButtonBase-root{
+  box-shadow: 2px 2px 2px #3B0404;
+  background-color: #3B0404;
+}
+
+.dropdown-content label{
+  background-color: #d3a49e;
+}
+.dropdown-content Checkbox{
+  padding: 12px 16px;
+  display: block;
+}
+
+
+.show {display: block;}
+
+.profile{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #E5C951;
 }
-.tool_bar input{
-  background-color:rgba(231, 225, 197, 0.993) ;
+
+
+.profile p{
+  font-size: 20px;
+  font-weight: bold;
+  color: #710019;
+  background-color: #E5C951;
+}
+
+.profileForm form, label, a, p{
+  background-color: #E5C951;
+}
+.profileForm input{
+  border-radius: 10px;
+  border: 3px solid #710019;;
+  outline: none;
+  margin-left: 14vh;
+  background-color: #E5C951;
+}
+.profileForm button{
+  border-radius: 5px;
+  border: 1px solid #710019;
+  outline: none;
+  background-color: rgba(231, 225, 197, 0.993);
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 39%;
+}
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #E5C951;
+}
+
+
+.login p{
+  font-size: 20px;
+  font-weight: bold;
+  color: #710019;
+  background-color: #E5C951;
+}
+.loginForm{
+  background-color: #E5C951;
+}
+
+.loginForm form, label, a, p{
+  background-color: #E5C951;
+}
+.loginForm input{
+  border-radius: 10px;
+  border: 3px solid #710019;;
+  outline: none;
+  margin-left: 14vh;
+  background-color: #E5C951;
+}
+.loginForm button{
+  border-radius: 5px;
+  border: 1px solid #710019;
+  outline: none;
+  background-color: rgba(231, 225, 197, 0.993);
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 39%;
+}
+.account{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #63747A;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.account-display{
+  background-color: #63747A;
+}
+.account-display p{
+  font-size: 20px;
+  font-weight: bold;
+  color: #d3a49e;
+  background-color: #63747A;
+}
+
+.about {
+ 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  background-color:#C5E3F2;
+}
+.about p, h1, h2, h3 , i, b{
+  font-family: 'Times New Roman', Times, serif;
+  background-color:#C5E3F2 ;
+}
+#footer{
+  margin-top: 5vh;
+  font-family: 'Times New Roman', Times, serif;
+  background-color:#C5E3F2 ;
 }
