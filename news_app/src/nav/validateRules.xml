@@ -1,7 +1,0 @@
-<validateRules>
-    <field name = "name" required = "true"  errorMsg = 'Full Name is required'/>
-    <field name = "username" required = "true"  errorMsg = 'Unique username is required'/>
-    <field name = "email" required = "true" pattern="^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$"  errorMsg = 'Email is required'/>
-    <field name = "password" required = "true"  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$" errorMsg = 'Password is required'/>
-    <field name = "age" required = "true" type='integer' errorMsg = 'Age is required'/>
-</validateRules>
